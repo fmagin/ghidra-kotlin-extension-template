@@ -53,3 +53,19 @@ code analysis engine as IntelliJ itself.
 If any step in this process doesn't work as described in the README, please open an issue on GitHub.
 I have only tested this on Linux so there might be some aspects that work differently on macOS or Windows, though these
 should be minor.
+
+
+### Known issues
+
+#### Ghidra looks even worse than usual when run via IDE
+
+The run configuration only includes the class loader VM option, and none of the others that are usually set by the
+Ghidra launch script, which include OpenGL settings and Font Anti Aliasing, because this depends on the OS.
+
+Generate the VM options for your system:
+```sh
+cd $GHIDRA_INSTALL_DIR
+java -cp ./support/LaunchSupport.jar LaunchSupport ./support/.. -vmargs
+```
+
+and then [edit the run configuration](https://www.jetbrains.com/help/idea/run-debug-configuration.html) and add them.
