@@ -38,8 +38,8 @@ and the GUI will keep working.
 ### Use Scripts and the Jupyter Kernel to prototype ideas
 
 With the [Kotlin Jupyter Plugin](https://github.com/GhidraJupyter/ghidra-jupyter-kotlin) you can test your new ideas first.
-IntelliJ IDEA can do hot reloading of classes, but this has limits and then requires an IDE restart,
-which take an annoying amount of time. The QT Console only is fairly basic, but the Jupyter Notebook uses nearly the same
+IntelliJ IDEA can do hot reloading of classes, but this has limits and then still requires a Ghidra restart,
+which takes an annoying amount of time. The QT Console is fairly basic, but the Jupyter Notebook uses nearly the same
 code analysis engine as IntelliJ itself.
 
 ### Automatic conversion to Kotlin
