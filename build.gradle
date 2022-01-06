@@ -47,7 +47,7 @@ dependencies {
 	// If you are using the Ghidra Jupyter Plugin for Kotlin, add the following line to declare it as a dependency
 	// This allows using the extension methods and makes sure that the required Kotlin libraries are present and not
 	// conflicting
-	//	api fileTree(dir: ghidraInstallDir + 'Ghidra/Extensions/GhidraJupyterKotlin/', include: "**/*.jar")
+	//	api fileTree(dir: ghidraInstallDir + '/Ghidra/Extensions/GhidraJupyterKotlin/', include: "**/*.jar")
 }
 
 // Make it explicit that the compilation depends on some libraries in the `lib` folder,
