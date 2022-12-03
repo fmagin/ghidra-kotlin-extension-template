@@ -10,13 +10,13 @@
 * Open IntelliJ, create a new `Project from Existing Sources...` and select the `build.gradle`
   * If you are using the [Kotlin Jupyter Plugin](https://github.com/GhidraJupyter/ghidra-jupyter-kotlin) uncomment the line in the `dependencies` block in the `build.gradle`
 * Wait for IntelliJ to finish indexing and fetching dependencies, hit the build button, and then run Ghidra
-
+  * if you are getting an error when running that is `Caused by: java.lang.ClassNotFoundException: ghidra.GhidraClassLoader`, check that the class path of the run configuration is `projectname.main" and not just `projectname`
 
 ## Features
 
 * Gradle Config that works out of the box with IntelliJ
 * IntelliJ IDEA Run Configuration for debugging of the extension
-  * If you have are using the [Kotlin Jupyter Plugin](https://github.com/GhidraJupyter/ghidra-jupyter-kotlin) you can also set breakpoints in the script file!
+  * If you are using the [Kotlin Jupyter Plugin](https://github.com/GhidraJupyter/ghidra-jupyter-kotlin) you can also set breakpoints in the script file!
 * GitHub CI files that
   * make sure the extension at least builds for each PR
   * will automatically build a release and publish it on GitHub if a commit is tagged with a version matching `vX.X.X`, e.g. `v1.2.3`/`v1.2.0` (`v1.2` doesn't work!)

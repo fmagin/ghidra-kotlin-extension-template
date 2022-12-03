@@ -39,7 +39,7 @@ else {
 // IntelliJ will complain about the discrepancy between the Java and the Kotlin target otherwise
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 	kotlinOptions {
-		jvmTarget = "11"
+		jvmTarget = "17"
 	}
 }
 
