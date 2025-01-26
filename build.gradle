@@ -44,8 +44,17 @@ dependencies {
 	// This allows using the extension methods and makes sure that the required Kotlin libraries are present and not
 	// conflicting
 	//	api fileTree(dir: ghidraInstallDir + '/Ghidra/Extensions/GhidraJupyterKotlin/', include: "**/*.jar")
+
+
+	// Unit testing dependencies
+	testImplementation 'org.jetbrains.kotlin:kotlin-test'
+
+
 }
 
+test {
+	useJUnitPlatform()
+}
 
 // Add the ghidra_scripts directory as an additional source set, so IntelliJ IDEA treats the scripts there as part of
 // the module
