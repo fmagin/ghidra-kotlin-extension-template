@@ -40,8 +40,8 @@ jobs:
                 path: ./dist/*zip
                 retention-days: 1
 
-      - name: Install Extension
-        run: unzip ./dist/*zip -d $GHIDRA_INSTALL_DIR/Ghidra/Extensions
-
-      - name: Run Tests
-        run: echo "Execute your tests here!"
+#      - name: Install Extension
+#        run: unzip ./dist/*zip -d $GHIDRA_INSTALL_DIR/Ghidra/Extensions
+#
+#      - name: Run Full Integration Tests
+#        run: echo "Execute your tests here!"
