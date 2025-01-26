@@ -24,6 +24,9 @@ jobs:
         with:
                 version: "11.2.1"
 
+      - name: Run unit tests
+        run: gradle test
+
       - name: Build Extension
         run: gradle buildExtension
 
