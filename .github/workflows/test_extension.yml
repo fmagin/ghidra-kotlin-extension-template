@@ -24,6 +24,10 @@ jobs:
         with:
                 version: "11.2.1"
 
+
+      - name: Linting with klint
+        run: gradle ktlintCheck
+
       - name: Run unit tests
         run: gradle test
 

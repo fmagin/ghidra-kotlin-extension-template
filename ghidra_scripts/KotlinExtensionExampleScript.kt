@@ -1,6 +1,6 @@
 // SCRIPT DESCRIPTION
-//@category    Examples
-//@toolbar    world.png
+// @category    Examples
+// @toolbar    world.png
 
 import ghidra.app.script.GhidraScript
 

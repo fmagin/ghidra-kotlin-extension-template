@@ -6,9 +6,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -44,7 +44,6 @@ import javax.swing.KeyStroke
  * Class description goes here
  *
  */
-//@formatter:off
 @PluginInfo(
     status = PluginStatus.RELEASED,
     packageName = ExamplesPluginPackage.NAME,
@@ -53,8 +52,8 @@ import javax.swing.KeyStroke
     description = "Sample plugin to demonstrate services and action enablement, hello world. (Kotlin)",
     servicesProvided = [HelloWorldService::class],
     servicesRequired = [ProgramManager::class],
-    eventsProduced = [ProgramLocationPluginEvent::class]
-) //@formatter:on
+    eventsProduced = [ProgramLocationPluginEvent::class],
+)
 class KitchenSinkPlugin(tool: PluginTool?) : ProgramPlugin(tool, false, false) {
     private var helloProgramAction: DockingAction? = null
     private var program: Program? = null
@@ -78,19 +77,21 @@ class KitchenSinkPlugin(tool: PluginTool?) : ProgramPlugin(tool, false, false) {
                 override fun sayHello() {
                     announce("Hello")
                 }
-            })
+            },
+        )
     }
 
     private fun setupActions() {
-        var action: DockingAction = object : DockingAction("Hello World", name) {
-            override fun actionPerformed(context: ActionContext) {
-                Msg.info(this, "Hello World:: action")
-                announce("Hello World")
+        var action: DockingAction =
+            object : DockingAction("Hello World", name) {
+                override fun actionPerformed(context: ActionContext) {
+                    Msg.info(this, "Hello World:: action")
+                    announce("Hello World")
+                }
             }
-        }
         val helloGroup = "Hello"
 
-        with (action) {
+        with(action) {
             isEnabled = true
             val prevImage = ResourceManager.loadImage(PREV_IMAGE)
             menuBarData = MenuData(arrayOf("Misc", "Hello World"), prevImage, helloGroup)
@@ -102,13 +103,14 @@ class KitchenSinkPlugin(tool: PluginTool?) : ProgramPlugin(tool, false, false) {
             tool.addAction(action)
         }
 
-        action = object : DockingAction("Hello Program", name) {
-            override fun actionPerformed(context: ActionContext) {
-                Msg.info(this, "Hello Program:: action")
-                sayHelloProgram()
+        action =
+            object : DockingAction("Hello Program", name) {
+                override fun actionPerformed(context: ActionContext) {
+                    Msg.info(this, "Hello Program:: action")
+                    sayHelloProgram()
+                }
             }
-        }
-        with (action) {
+        with(action) {
             isEnabled = true
             val nextImage = ResourceManager.loadImage(NEXT_IMAGE)
             menuBarData = MenuData(arrayOf("Misc", "Hello Program"), nextImage, helloGroup)
@@ -136,18 +138,19 @@ class KitchenSinkPlugin(tool: PluginTool?) : ProgramPlugin(tool, false, false) {
     }
 
     protected fun sayHelloProgram() {
-        if (program != null){
+        if (program != null) {
             // Kotlin infers that program could have been nulled again, so we have to assert it is not null with !!
             // at the risk of maybe throwing a null pointer exception
             announce("Hello ${program!!.name}")
         }
-
     }
 
     protected fun announce(message: String?) {
         JOptionPane.showMessageDialog(
-            null, message, "Hello World",
-            JOptionPane.INFORMATION_MESSAGE
+            null,
+            message,
+            "Hello World",
+            JOptionPane.INFORMATION_MESSAGE,
         )
     }
 
@@ -170,6 +173,4 @@ class KitchenSinkPlugin(tool: PluginTool?) : ProgramPlugin(tool, false, false) {
         private const val NEXT_IMAGE = "images/right.png"
         private const val PREV_IMAGE = "images/left.png"
     }
-
-
 }
