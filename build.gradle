@@ -67,3 +67,10 @@ sourceSets {
 		}
 	}
 }
+
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
+}
