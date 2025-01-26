@@ -1,8 +1,10 @@
 package ghidra.examples
 
 class Sample() {
-
-    fun sum(a: Int, b: Int): Int {
+    fun sum(
+        a: Int,
+        b: Int,
+    ): Int {
         return a + b
     }
 }

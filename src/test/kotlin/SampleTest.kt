@@ -1,9 +1,8 @@
 import ghidra.examples.Sample
-import org.junit.jupiter.api.Assertions.*
 import kotlin.test.Test
+import kotlin.test.assertEquals
 
 class SampleTest {
-
     private val testSample: Sample = Sample()
 
     @Test
